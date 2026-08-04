@@ -1,0 +1,6 @@
+Design Guidelines Creation Complete
+Created /app/design_guidelines.json outlining the design strategy for the AI-based Cotton Price Forecasting web app.
+Established a light, earthy, and organic theme suitable for Indian farmers and agricultural traders, avoiding AI-slop purple gradients.
+Selected typography (Chivo for headings, IBM Plex Sans for data-heavy body) and colors (Deep Forest Green, Terracotta, Ochre) emphasizing trust, clarity, and agricultural relevance.
+Provided clear layout patterns (Bento Mode B), component strategies (Recharts for confidence bands, flat solid surfaces), and relevant image assets.
+Next Action Items: Main agent can now read /app/design_guidelines.json and start implementing the frontend (Auth, Dashboard, Prediction UI).
