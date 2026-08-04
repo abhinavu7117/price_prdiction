@@ -1,0 +1,91 @@
+{
+  "theme": "light",
+  "typography": {
+    "headings": {
+      "family": "Chivo",
+      "weights": ["400", "700", "900"],
+      "usage": "Use for all page titles, widget titles, and hero metrics. It gives an institutional yet organic look."
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "weights": ["400", "500", "600"],
+      "usage": "Use for all tabular data, chart labels, body text, and pricing numbers. Excellent for readability of Indian Rupees (₹) and data density."
+    }
+  },
+  "colors": {
+    "background": "#F9F8F6",
+    "surface": "#FFFFFF",
+    "primary": "#1E3F2A",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#C25E3B",
+    "secondary_foreground": "#FFFFFF",
+    "accent": "#4A83B4",
+    "muted": "#E5E2DC",
+    "text_main": "#1C1917",
+    "text_muted": "#57534E",
+    "status": {
+      "bullish_buy": "#2B7A4B",
+      "bearish_sell": "#C25E3B",
+      "stable_hold": "#E1B158"
+    }
+  },
+  "grids_and_layouts": {
+    "dashboard_mode": "High Density Grid (Bento Mode B)",
+    "spacing_system": "Generous Spacing (Tailwind Scale p-6, p-8 for containers)",
+    "sidebar": "Deep Forest Green (#1E3F2A) sidebar with white text for high contrast navigation. Use a collapsible F-pattern layout.",
+    "cards": "Flat solid surfaces. 1px earthy borders (#E5E2DC). No glassmorphism on data containers (reduces refraction). Max border-radius 8px."
+  },
+  "components_and_visual_enhancers": {
+    "charts": "Use Recharts. Ensure confidence bands in prediction charts use a soft fill opacity (e.g., 20%) of the primary trend color. Use a composite line chart + area chart.",
+    "pricing_recommendation_card": "Apply 'The Tracing Beam' (dynamic subtle animated border via framer-motion) to highlight this as the AI-driven 'hero' element. Do NOT use purple.",
+    "data_tables": "Dense style. Left-align most columns, right-align numeric pricing columns. Use alternating row colors very subtly or just clean 1px bottom borders.",
+    "ai_insights": "Present plain-English AI text in a clean callout box with a subtle moss-green or pale sand background to indicate 'Insights'. Use an editorial typography touch here."
+  },
+  "motion": {
+    "interactions": "Hover states must lift slightly (-translate-y-1) and darken border. Button clicks should scale down (scale-95).",
+    "transitions": "Use specific transitions (e.g., transition: transform 0.2s ease, border-color 0.2s ease), do not use 'all'."
+  },
+  "accessibility": {
+    "contrast": "Ensure APCA minimum contrast. Prices must be minimum 3:1 against background.",
+    "testing": "All interactive elements MUST include data-testid (e.g., data-testid='predict-button')."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1731699317142-2333ff275326?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1Mjh8MHwxfHNlYXJjaHw0fHxjb3R0b24lMjBmaWVsZCUyMHN1bnNldHxlbnwwfHx8fDE3ODU3NDUwMjN8MA&ixlib=rb-4.1.0&q=85",
+      "category": "landing_page",
+      "description": "Cotton field at sunset. Use as a subtle, low-opacity (20%) blended background for the login/landing page to establish context."
+    },
+    "user_avatar": {
+      "url": "https://images.pexels.com/photos/36998122/pexels-photo-36998122.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "category": "dashboard_profile",
+      "description": "Indian farmer traditional portrait. Use as a placeholder for the User Profile section."
+    }
+  },
+  "3d_libraries_and_extras": {
+    "icons": "Use @phosphor-icons/react for dense, professional data/dashboard icons. (Run: yarn add @phosphor-icons/react).",
+    "animations": "Use framer-motion for the Pricing Recommendation card entrance."
+  },
+  "instructions_to_main_agent": [
+    "Install required fonts from Google Fonts: Chivo and IBM Plex Sans.",
+    "Install @phosphor-icons/react, recharts, framer-motion, lucide-react, clsx, tailwind-merge.",
+    "Set up JWT Auth flow with mock data or real backend depending on state.",
+    "Build the dashboard F-pattern: Sidebar on left. Top row: Key metrics (Current Price, Trend). Main area: Prediction Chart. Right/Side area: AI Recommendation Card.",
+    "Use Recharts for the forecast chart (Historical + Future). Add an <Area> with lower/upper bound data for confidence bands, and a <Line> for the expected price.",
+    "Recommendation card must use color coding: HOLD (Ochre/Yellow), SELL (Terracotta/Red), WAIT (Ochre/Yellow) or BUY (Moss Green).",
+    "Do NOT use Space Grotesk. Do NOT use purple for AI features. AI should feel earthy and grounded, like an expert agronomist.",
+    "Ensure 'Indian Rupees only' is strictly followed (₹ symbol everywhere).",
+    "Do NOT center align the app container. Use clean F-pattern F-layout.",
+    "Ensure the header/top-nav doesn't have a transparent background if content scrolls under it."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "Do not converge toward generic outputs. Avoid 'AI slop' aesthetics.",
+    "Create depth through layered design elements with z-index hierarchy, but avoid muddy gray transparency.",
+    "Do not apply universal transition (e.g., transition: all). Add transitions for specific interactive elements.",
+    "Do not center align the app container in CSS. It disrupts reading flow.",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations.",
+    "Never use AI assistant Emoji characters (🤖🧠💭💡) for icons.",
+    "Use 2-3x more spacing than feels comfortable. Use generous paddings.",
+    "Prioritize pre-existing components from src/components/ui.",
+    "Use sonner for toasts, located in /app/src/components/ui/sonner.js or similar."
+  ]
+}
