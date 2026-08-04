@@ -1,34 +1,85 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Cotton AI - earthy modern styling */
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background: #F9F8F6;
+  color: #1C1917;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+h1, h2, h3, h4, .font-display {
+  font-family: "Chivo", "IBM Plex Sans", sans-serif;
+  letter-spacing: -0.01em;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+.font-mono-num {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
 }
 
-.App-link {
-    color: #61dafb;
+.card-earth {
+  background: #fff;
+  border: 1px solid #E5E2DC;
+  border-radius: 8px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.card-earth:hover {
+  transform: translateY(-2px);
+  border-color: #C7C0B4;
+  box-shadow: 0 6px 20px -12px rgba(28, 25, 23, 0.15);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+.pill-btn {
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease;
 }
+.pill-btn:active { transform: scale(0.96); }
+
+.grain-bg {
+  background-image:
+    radial-gradient(rgba(28,25,23,0.05) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+/* Sidebar */
+.sidebar-item {
+  color: #E5E2DC;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+.sidebar-item:hover { background: rgba(255,255,255,0.06); color: #fff; }
+.sidebar-item.active {
+  background: rgba(255,255,255,0.09);
+  border-left-color: #E1B158;
+  color: #fff;
+}
+
+/* Chart overrides */
+.recharts-cartesian-grid line { stroke: #EDE9E2; }
+.recharts-text { fill: #57534E; font-family: "IBM Plex Sans"; font-size: 12px; }
+
+/* Tracing beam border animation for hero recommendation card */
+.tracing-beam {
+  position: relative;
+  isolation: isolate;
+}
+.tracing-beam::before {
+  content: "";
+  position: absolute; inset: -1px; border-radius: 10px; z-index: -1;
+  background: conic-gradient(from var(--angle,0deg), #1E3F2A, #E1B158, #C25E3B, #1E3F2A);
+  animation: spin-beam 6s linear infinite;
+  filter: blur(6px);
+  opacity: 0.35;
+}
+@property --angle { syntax: "<angle>"; initial-value: 0deg; inherits: false; }
+@keyframes spin-beam { to { --angle: 360deg; } }
+
+.status-bullish { color: #2B7A4B; }
+.status-bearish { color: #C25E3B; }
+.status-stable  { color: #B8892F; }
+
+.badge {
+  display: inline-flex; align-items:center; gap: 0.4rem;
+  padding: 0.2rem 0.6rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600;
+}
+
