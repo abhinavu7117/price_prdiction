@@ -134,7 +134,7 @@ def forecast(prices_df: pd.DataFrame, horizon: int = 30) -> dict:
     return {
         "current_price": round(current, 2),
         "predicted_price": round(predicted, 2),
-        "expected_range": {"low": float(round(min(lower)), 2), "high": float(round(max(upper), 2))},
+        "expected_range": {"low": float(round(min(lower), 2)), "high": float(round(max(upper), 2))},,
         "trend": trend,
         "confidence": round(confidence, 1),
         "probability_rise": round(prob_rise * 100, 1),
